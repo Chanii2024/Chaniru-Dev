@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* 
+ * TAILWIND V4 CONFIGURATION 
+ * Note: IDE warnings for @theme are normal in v4.
+ */
+@theme {
+  --color-jet: #333333;
+  --color-french: #b0bec5;
+  --color-slate-gray: #607d8b;
+  --color-soft-rose: #ffebee;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* 
+ * ROOT STABILIZATION
+ * Using raw CSS here to ensure the layout never "blows up" 
+ * even if Tailwind JIT hasn't finished loading.
+ */
+:root {
+  --jet: #333333;
+  --slate-gray: #607d8b;
+  --soft-rose: #ffebee;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Font size optimization for responsiveness */
+  font-size: 16px;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body {
+  background-color: #ffffff;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  /* Hide scrollbar */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Base Component Classes */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.architect-arch {
+  border-top-left-radius: 1000px;
+  border-top-right-radius: 1000px;
+  border: 1px solid rgba(96, 125, 139, 0.2);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #607d8b, #333333);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-soft {
+  background-color: #ffebee;
+}
+
+/* Utility for section scroll margin */
+.section-anchor {
+  scroll-margin-top: 6rem;
+}
